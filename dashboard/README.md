@@ -1,0 +1,1 @@
+The live dashboard is created in Looker Studio using the instructions in `looker_studio_build_spec.md`. No hosted dashboard is included in this local starter repository; add the actual link after publishing and verifying access.
