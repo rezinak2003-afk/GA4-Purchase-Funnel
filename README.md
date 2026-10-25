@@ -45,11 +45,25 @@ Where do shoppers drop out before purchasing, and which device, first-touch acqu
 
 ## Key findings
 
-Not populated yet. Fill this section only after the queries run successfully and all reported numbers can be re-derived from the repository.
+## Key findings
 
-1. Overall session-to-purchase conversion: **pending query results**.
-2. Largest qualified funnel gap by device/channel/landing type: **pending query results**.
-3. Revenue-impact range and statistical uncertainty: **pending query results**.
+### 1. Landing-page funnel
+
+- Home landing pages recorded 153,007 sessions, 3,875 checkout sessions, and 1,681 cumulative purchases.
+- Home checkout-to-purchase rate was 43.38%.
+- Apparel / lifestyle / shop-by pages recorded 122,309 sessions and a 56.49% checkout-to-purchase rate.
+- Store page was the highest-rate eligible benchmark observed in the landing-page sizing query, at approximately 69.35%.
+
+### 2. Device comparison
+
+- Mobile: 1,180 purchases from 2,404 checkout sessions (49.08%).
+- Desktop: 1,606 purchases from 3,425 checkout sessions (46.89%).
+- The two-proportion test returned p = 0.0987. The observed difference was not statistically significant at the 5% level; it should not be presented as proof that mobile performs better.
+
+### 3. Revenue opportunity scenario
+
+- The landing-page sizing query estimated approximately $34,951 at 50% closure of the Home-to-Store-page checkout conversion-rate gap.
+- This is a scenario estimate, not a forecast or causal impact claim. It depends on the benchmark being a meaningful comparison and on the purchase-revenue deduplication assumptions.
 
 ## Limitations and next steps
 
