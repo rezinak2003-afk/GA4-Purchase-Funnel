@@ -1,42 +1,44 @@
-# One-page recommendation memo — complete after running the analysis
+# Recommendation Memo: GA4 Purchase Funnel Analysis
 
-**TO:** E-commerce Product / Growth Lead  
-**FROM:** [Your name]  
-**DATE:** [Date]  
-**SUBJECT:** Investigate [qualified funnel segment and step] first
+**Dataset:** Google Merchandise Store GA4 sample  
+**Analysis period:** November 1, 2020 – January 31, 2021  
+**Prepared by:** Data Analytics Portfolio Project
 
-## Bottom line
+## Executive Recommendation
 
-Investigate **[segment / funnel step]** first. Based on the observed comparison with **[benchmark]**, closing 25%-50% of the measured checkout-completion gap is estimated to represent **$[low]-$[high]** over a comparable three-month period, subject to the assumptions below.
+Prioritize an investigation of the Home landing-page experience before making product or checkout changes. The Home landing-page group has substantial session volume and a lower checkout-to-purchase rate than the Store page benchmark in this analysis. This difference identifies an opportunity to investigate; it does not establish that the Home page causes purchase drop-off.
 
-## What we found
+## Key Findings
 
-1. **Overall funnel:** [actual sessions], [actual purchase sessions], and [actual session-to-purchase conversion].
-2. **Segment comparison:** [actual segment rate] versus [actual benchmark rate], a difference of [actual percentage points] at [actual checkout session counts].
-3. **Uncertainty and data checks:** [actual p-value], 95% confidence interval [actual interval]; transaction ID and session sanity checks: [actual outcomes].
+### 1. Landing-page funnel
 
-## Size of the prize
+The Home landing-page group recorded 153,007 sessions, 3,875 checkout sessions, and 1,681 cumulative purchases. Its checkout-to-purchase rate was 43.38%.
 
-- 25% of gap closed: $[actual estimate]
-- 50% of gap closed: $[actual estimate]
-- 100% of gap closed: $[actual estimate]
+The Apparel / lifestyle / shop-by group recorded 122,309 sessions and a checkout-to-purchase rate of 56.49%. The Store page group had the highest eligible benchmark rate observed in the analysis, approximately 69.35%.
 
-Assumption: benchmark performance can be partially approached, and the estimated average purchase revenue is applicable to incremental orders. This is an opportunity-sizing scenario, not a forecast.
+These comparisons are based on session-level event flags, not strict timestamp-ordered journeys. Landing-page categories are rule-based groupings and should be reviewed against the underlying paths.
 
-## Recommended action
+### 2. Device comparison
 
-**Hypothesis:** [specific checkout or page change] will improve [primary metric] for [eligible segment]. Randomise at the user level 50/50. Run for at least one to two full weeks, subject to a suitable sample-size calculation. Primary metric: checkout-to-purchase rate. Guardrails: average order value, refunds, and error rate. Define the minimum detectable lift and success criterion before launch.
+Mobile recorded 1,180 purchases from 2,404 checkout sessions, a rate of 49.08%. Desktop recorded 1,606 purchases from 3,425 checkout sessions, a rate of 46.89%.
 
-## Caveats
+The two-proportion test returned p = 0.0987. The difference was not statistically significant at the 5% level. The observed mobile advantage should not be treated as proof of better performance or as a causal effect.
 
-- Obfuscated sample for one store, 2020-11-01 through 2021-01-31; the period includes the holiday season.
-- `traffic_source` is first-touch user acquisition, not the current session's source.
-- The funnel counting rule is cumulative flags and ignores event timestamp order; purchases that skip earlier steps are reported separately.
-- A segment gap suggests where to investigate; it does not establish causation or prove that the experience is broken.
-- [Any additional validation or data limitations observed]
+### 3. Revenue opportunity scenario
 
-## Method in one line
+The Home-to-Store-page rate-gap analysis estimated approximately **$34,951** under a 50% gap-closure scenario. This is an illustrative scenario, not a forecast or guaranteed financial impact. It relies on the chosen benchmark, average identified transaction revenue, and transaction-deduplication assumptions.
 
-[Actual source/table scope], [actual event/session volume], nested GA4 parameters unpacked with `UNNEST`, session-level cumulative funnel, segmented conversion comparisons, gap-closure scenarios, and a two-proportion significance check.
+## Recommended Next Steps
 
-> Remove every bracketed placeholder after the queries run. Do not publish this memo as a final finding until all values are verified from your results.
+1. Inspect the highest-volume Home landing paths and compare the actual user journeys with the Store page paths.
+2. Validate the landing-page classification rules and verify purchase transaction deduplication before presenting revenue scenarios externally.
+3. Investigate potential usability issues using additional evidence, such as page behaviour, device experience, and checkout diagnostics.
+4. If a plausible issue is identified, propose a measurable experiment and evaluate the outcome before claiming business impact.
+
+## Limitations
+
+The data is an obfuscated sample from one store covering three months that include the holiday season. It is not current live-store data. First-touch acquisition fields do not represent session-level attribution. Funnel flags do not enforce event timestamp order, and segment comparisons do not prove causality.
+
+## Decision
+
+**Proceed with investigation, not an immediate redesign.** Validate the Home landing-page journey and supporting evidence before prioritising a change or communicating revenue impact.
