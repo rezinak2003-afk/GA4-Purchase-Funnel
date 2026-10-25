@@ -6,7 +6,7 @@
 
 ## Dashboard / report
 
-- Looker Studio dashboard: **build and add link after connecting the BigQuery tables**
+-- Looker Studio dashboard: [View the interactive GA4 Purchase Funnel Dashboard](https://datastudio.google.com/reporting/d966689f-64b8-44c6-b8b8-c22563e4696c)
 - Two-minute walkthrough: **record and add link after findings are validated**
 - One-page recommendation: [`docs/recommendation.pdf`](docs/recommendation.pdf) (draft template; replace after running the analysis)
 - Dashboard screenshot: [`docs/screenshots/`](docs/screenshots/) (add real screenshots after publishing)
